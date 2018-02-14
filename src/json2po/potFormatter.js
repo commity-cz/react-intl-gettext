@@ -1,13 +1,12 @@
 const buildMessage = copyDefaultTranslation => ({
-  reference,
   description,
   id,
   defaultMessage,
   translatedMessage,
 }) =>
 [
-  `#. ${description}`,
-  `# ${reference}`,
+  description ? `#. ${description}` : null,
+  `# ${id}`,
   `msgctxt "${id}"`,
   `msgid "${defaultMessage}"`,
   `msgstr "${copyDefaultTranslation ? translatedMessage || defaultMessage : ''}"`,
